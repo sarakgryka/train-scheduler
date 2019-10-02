@@ -52,6 +52,7 @@ $(document).ready(function () {
 
     function newRow(name, destination, firstTime, frequency) {
         
+        console.log(firstTime);
 
         let newTrain = $("<tr>")
         let nameCol = $("<td>")
@@ -59,18 +60,24 @@ $(document).ready(function () {
         let frequencyCol = $("<td>")
         let nextArrivalCol = $("<td>")
         let minutesAwayCol = $("<td>")
-        
-        // let nextArrival = moment().
-        // let minutesAway = frequency - nextArrival;
+        let minutesLeft = moment().diff(moment().unix(firstTime), "minutes") % frequency;
+        console.log(minutesLeft);
+        let minutesAway = frequency - minutesLeft;
+        console.log(minutesAway);
+        let nextArrival = moment().add(minutesAway, "m").format("hh:mm A");
 
-        nameCol.text(name)
-        destinationCol.text(destination)
-        frequencyCol.text(frequency)
+        nameCol.text(name);
+        destinationCol.text(destination);
+        frequencyCol.text(frequency);
+        nextArrivalCol.text(nextArrival);
+        minutesAwayCol.text(minutesAway);
 
 
-        newTrain.append(nameCol)
-        newTrain.append(destinationCol)
-        newTrain.append(frequencyCol)
+        newTrain.append(nameCol);
+        newTrain.append(destinationCol);
+        newTrain.append(frequencyCol);
+        newTrain.append(nextArrivalCol);
+        newTrain.append(minutesAwayCol);
 
 
         $("#trainDataTable").append(newTrain)
@@ -100,6 +107,14 @@ $(document).ready(function () {
             trainFrequency = $("#trainFrequency").val()
 
         addToDatabase(trainName, trainDestination, firstTrain, trainFrequency)
+
+        alert(`${trainName} has been added!`);
+        $("#trainName").val("");
+        $("#trainDestination").val("");
+        $("#firstTrain").val("");
+        $("#trainFrequency").val("")
+
+
         
     })
 
