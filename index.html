@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="train.js">
 
@@ -51,7 +53,7 @@
                         <div class="col sm 12">
 
 
-                            <table class="table table-striped">
+                            <table id = "train-table" class="table table-striped">
                                 <thead>
                                     <tr>
 
@@ -63,7 +65,7 @@
                                         
                                     </tr>
                                 </thead>
-                                <tbody id="employeeDataTable">
+                                <tbody id="trainDataTable">
                                   
                                 </tbody>
                             </table>
@@ -90,25 +92,25 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Train Name</label>
-                            <input class="form-control" id="exampleInputEmail1"
+                            <input class="form-control" id="trainName"
                                 >
                            
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Destination</label>
-                            <input  class="form-control" id="exampleInputPassword1"
+                            <input  class="form-control" id="trainDestination"
                                 >
                         </div>
 
                         <div class="form-group">
                                 <label for="exampleInputPassword1">First Train Time (HH:mm -Military Time)</label>
-                                <input class="form-control" id="exampleInputPassword1"
+                                <input class="form-control" id="firstTrain"
                                    >
                             </div>
 
                             <div class="form-group">
                                     <label for="exampleInputPassword1">Frequency</label>
-                                    <input class="form-control" id="exampleInputPassword1"
+                                    <input class="form-control" id="trainFrequency"
                                         >
                                 </div>
                         
@@ -124,7 +126,8 @@
 
                 </blockquote>
 
-
+                <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
 
             </div>
 
