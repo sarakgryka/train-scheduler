@@ -1,0 +1,36 @@
+
+
+body { 
+    min-height: 100%;
+    min-width: 1024px;
+    background: url(./ddrqskH.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .card{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+} 
+
+.card-header {
+
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+.table {
+
+    color: green;
+}
+
+.form-group {
+
+    color: green;
+}
