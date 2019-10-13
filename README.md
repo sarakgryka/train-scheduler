@@ -5,3 +5,5 @@ The train scheduler shows the current train schedule and allows you to add addit
 You can also see how the next scheduled train arrival and how far away the train is. 
 
 Firebase is used to store the train schedule and allows you to view from any time zone. 
+
+https://sarakgryka.github.io/train-scheduler/
